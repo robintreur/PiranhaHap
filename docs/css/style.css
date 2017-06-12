@@ -1,0 +1,208 @@
+html, body {
+    background: -webkit-radial-gradient(left top, circle farthest-corner, #FFFFFF 0%, #00A3EF 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    margin:0px; padding:0px;
+    width: 100%;
+    height: 100%;
+    clear:both;
+}
+
+body * {
+    position: absolute;
+    display: block;
+    margin:0px; padding:0px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+menu{
+    width: 100%;
+    height: 100%;
+}
+
+    menu mode{
+        width: 50%;
+        height: 100%;
+        transition: all ease 0.3s;
+    }
+    menu mode:hover{
+        background-color: rgba(250,250,250,0.5);
+        cursor: pointer;
+    }
+    menu mode:last-child{
+        right: 0;
+    }
+        menu mode text{
+            text-align: center;
+            width: 100%;
+            font-size: 32px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+            color: #fff;
+        }
+        mode text:before{
+            content: "";
+            width: 85px;
+            height: 65px;
+            position: absolute;
+            top: -80px;
+            left: calc(50% - 32.5px);
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+        mode.normal text:before{
+            background-image: url("../images/piranha.png");
+        }
+
+        mode.survival text:before{
+            background-image: url('../images/piranha-survival.png');
+        }
+
+        mode:hover text:before{
+            animation-name: modeRotation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+dashboard{
+    width: 100%;
+}
+    dashboard score, dashboard time{
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 24px;
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    }
+    dashboard health{
+        left: 20px;
+        top: 20px;
+        position: relative;
+        width: 30px;
+        height: 30px;
+    }
+        dashboard health bar{
+            width: 30px;
+            background-color: red;
+            bottom: 0;
+        }
+        dashboard health heart{
+            background-image: url("../images/heart.svg");
+            width: 50px;
+            height: 50px;
+            left: -10px;
+            bottom: -10px;
+        }
+
+    dashboard lifes{
+        right: 20px;
+        top: 20px;
+    }
+        dashboard life{
+            background-image: url("../images/life.svg");
+            width: 30px;
+            height: 30px;
+        }
+        dashboard life:nth-child(1){
+            right: 0;
+        }
+        dashboard life:nth-child(2){
+            right: 40px;
+        }
+        dashboard life:nth-child(3){
+            right: 80px;
+        }
+
+piranha{
+    height: 66px; width: 85px;
+    background-image: url('../images/piranha.png');
+    background-size: 100% auto;
+    background-position: 0 0;
+    z-index: 10;
+}
+
+eel{
+    height: 27px; width: 110px;
+    background-image: url('../images/eel.png');
+    background-size: 100% auto;
+    background-position: 0 0;
+    animation: eelSwim 1s step-end infinite;
+}
+
+blowfish{
+    height: 65px; width: 65px;
+    background-image: url('../images/blow-fish.png');
+    background-size: 100% auto;
+    background-position: 0 -65px;
+}       
+
+fish {
+    height:25px; width:50px;
+    background-image: url('../images/small-fish.png');
+    background-size: 100% auto;
+    animation-name: fishSwim;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+    fish.fish-1{
+        background-position: 0 0;
+    }
+    fish.fish-2{
+        background-position: 0 -25px;
+    }
+    fish.fish-3{
+        background-position: 0 -50px;
+    }
+
+    fish.dead{
+        opacity: 0;
+    }
+
+finish{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250,250,250,0.8);
+    z-index: 20;
+}
+    finish text, finish again{
+        text-align: center;
+        text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+        color: #fff;
+    }
+    finish text{
+        width: 100%;
+        top: 40%;
+        font-size: 48px;
+    }
+    finish again{
+        float: none;
+        font-size: 24px;
+        margin: 0 auto;
+        padding: 5px 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 40%;
+        background: #3c3b90;
+        border: 1px solid #000;
+        border-radius: 50px;
+        cursor: pointer;
+    }    
+
+@keyframes fishSwim {
+    0%   {top:0px;}
+    25%  {top:10px;}
+    75% {top:-10px;}
+    100% {top:0px;}
+}
+
+@keyframes eelSwim {
+    0%   {background-position: 0 0;}
+    50%  {background-position: 0 -27px;}
+}
+
+@keyframes modeRotation {
+    0%   {transform: rotateY(0);}
+    100%  {transform: rotateY(360deg);}
+}
