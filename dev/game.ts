@@ -111,16 +111,15 @@ class Game {
             this._divFinishText.innerHTML = "Game over!";
         }else{
             this._divFinishText.innerHTML = "Je hebt gewonnen!";
+            this._divFinishCode = document.createElement("code");
+            this._divFinishCode.innerHTML = "Code: 938";
+            this._divFinish.appendChild(this._divFinishCode);
         }
         
         this._divFinish.appendChild(this._divFinishText);
 
-        this._divFinishCode = document.createElement("code");
-        this._divFinishCode.innerHTML = "Code: 938";
-        this._divFinish.appendChild(this._divFinishCode);
-
         this._divFinishAgain = document.createElement("again");
-        this._divFinishAgain.innerHTML = "Speel overnieuw";
+        this._divFinishAgain.innerHTML = "Speel opniew";
         this._divFinish.appendChild(this._divFinishAgain);
 
         this._divFinishAgain.addEventListener("click", () => {
