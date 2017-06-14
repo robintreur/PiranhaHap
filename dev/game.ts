@@ -17,6 +17,7 @@ class Game {
     private _divFinish:HTMLElement;
     private _divFinishText:HTMLElement;
     private _divFinishAgain:HTMLElement;
+    private _divFinishCode:HTMLElement;
  
     constructor(m:Menu) {
 
@@ -113,6 +114,10 @@ class Game {
         }
         
         this._divFinish.appendChild(this._divFinishText);
+
+        this._divFinishCode = document.createElement("code");
+        this._divFinishCode.innerHTML = "Code: 938";
+        this._divFinish.appendChild(this._divFinishCode);
 
         this._divFinishAgain = document.createElement("again");
         this._divFinishAgain.innerHTML = "Speel overnieuw";
