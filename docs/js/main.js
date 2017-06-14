@@ -74,7 +74,7 @@ var Dashboard = (function () {
     function Dashboard(g, m) {
         var _this = this;
         this.score = 0;
-        this.time = 500;
+        this.time = 300;
         this.piranhaLifes = 3;
         this.piranhaHealth = 100;
         this.createDiv(m);
@@ -109,7 +109,7 @@ var Dashboard = (function () {
         }
         if (m.mode == "normal") {
             this._divScore = document.createElement("score");
-            this._divScore.innerHTML = "Score: " + this.score + "/500";
+            this._divScore.innerHTML = "Score: " + this.score + "/400";
             this._div.appendChild(this._divScore);
         }
         else if (m.mode == "survival") {
@@ -151,9 +151,9 @@ var Dashboard = (function () {
     };
     Dashboard.prototype.changeScore = function (g) {
         this.score++;
-        this._divScore.innerHTML = "Score: " + this.score + "/500";
+        this._divScore.innerHTML = "Score: " + this.score + "/400";
         this._div.appendChild(this._divScore);
-        if (this.score >= 500) {
+        if (this.score >= 400) {
             g.finish("won");
         }
     };
@@ -487,6 +487,9 @@ var Menu = (function () {
         this.survivalModeText.innerHTML = "Survival Mode";
         this.survivalMode.appendChild(this.survivalModeText);
         this.survivalMode.addEventListener("click", function () { return _this.startGame("survival"); });
+        this.instructions = document.createElement("instructions");
+        this.instructions.innerHTML = "1. Eet de kleine vissen om te blijven leven. 2. Ontwijk de grote vissen om niet opgegeten te worden.";
+        this.menu.appendChild(this.instructions);
     };
     Menu.prototype.startGame = function (mode) {
         this.menu.remove();
