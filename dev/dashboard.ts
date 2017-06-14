@@ -10,7 +10,7 @@ class Dashboard {
     private _divScore: HTMLElement;
     public score:number = 0;
 
-    public time:number = 500;
+    public time:number = 300;
     private _divTime: HTMLElement;
     public updateTimeInterval:number;
 
@@ -60,7 +60,7 @@ class Dashboard {
         }
         if(m.mode == "normal"){
             this._divScore = document.createElement("score");
-            this._divScore.innerHTML = "Score: "+this.score+"/500";
+            this._divScore.innerHTML = "Score: "+this.score+"/400";
             this._div.appendChild(this._divScore);
         }else if(m.mode == "survival"){
             this._divTime = document.createElement("time");
@@ -111,10 +111,10 @@ class Dashboard {
     }
     public changeScore(g:Game){
         this.score++;
-        this._divScore.innerHTML = "Score: "+this.score+"/500";
+        this._divScore.innerHTML = "Score: "+this.score+"/400";
         this._div.appendChild(this._divScore);
 
-        if(this.score >= 500){
+        if(this.score >= 400){
             g.finish("won");
         }
     }
