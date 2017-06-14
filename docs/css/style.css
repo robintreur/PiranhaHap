@@ -166,14 +166,14 @@ finish{
     background-color: rgba(250,250,250,0.8);
     z-index: 20;
 }
-    finish text, finish again{
+    finish text, finish again, finish code{
         text-align: center;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
         color: #fff;
     }
     finish text{
         width: 100%;
-        top: 40%;
+        top: 35%;
         font-size: 48px;
     }
     finish again{
@@ -189,6 +189,12 @@ finish{
         border-radius: 50px;
         cursor: pointer;
     }    
+    finish code{
+        text-align: center;
+        width: 100%;
+        top: calc(35% + 75px);
+        font-size: 30px;
+    }
 
 @keyframes fishSwim {
     0%   {top:0px;}
