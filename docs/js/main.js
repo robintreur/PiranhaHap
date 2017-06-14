@@ -364,6 +364,9 @@ var Game = (function () {
             this._divFinishText.innerHTML = "Je hebt gewonnen!";
         }
         this._divFinish.appendChild(this._divFinishText);
+        this._divFinishCode = document.createElement("code");
+        this._divFinishCode.innerHTML = "Code: 938";
+        this._divFinish.appendChild(this._divFinishCode);
         this._divFinishAgain = document.createElement("again");
         this._divFinishAgain.innerHTML = "Speel overnieuw";
         this._divFinish.appendChild(this._divFinishAgain);
