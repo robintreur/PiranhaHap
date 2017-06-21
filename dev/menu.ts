@@ -1,18 +1,18 @@
 /// <reference path="game.ts"/>
 
 class Menu {
-    private menu:HTMLElement;
-    private normalMode:HTMLElement;
-    private normalModeText:HTMLElement;
-    private survivalMode:HTMLElement;
-    private survivalModeText:HTMLElement;
+    protected menu:HTMLElement;
+    protected normalMode:HTMLElement;
+    protected normalModeText:HTMLElement;
+    protected survivalMode:HTMLElement;
+    protected survivalModeText:HTMLElement;
     public mode:string;
-    private game:Game;
+    protected game:Game;
 
     constructor(){
         this.createMenu();
     }
-    private createMenu(){
+    protected createMenu(){
         this.menu = document.createElement("menu");
         document.body.appendChild(this.menu);
 
@@ -36,7 +36,7 @@ class Menu {
 
         this.survivalMode.addEventListener("click", () => this.startGame("survival"));
     }
-    private startGame(mode:string){
+    protected startGame(mode:string){
         this.menu.remove();
         this.menu = undefined;
         this.mode = mode;
