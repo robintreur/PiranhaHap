@@ -6,7 +6,7 @@
 ## Installeren:
 - Plaats alle bestanden uit docs op uw ftp server
 
-Installatiehandleiding Asteroid shooter
+Installatiehandleiding
 
 Wanneer u op het menuscherm van de game komt wordt er onderaan in 2 korte zinnen uitgelegd wat u moet doen. Om het spel te starten klik op 1 van de 2 modus (survival mode of normal mode).
 
